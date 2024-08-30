@@ -90,16 +90,46 @@ namespace MSSAGroupThree
             // search for the first item that has the count of 1
             // if it doesn't exist, return -1
             // if it does exist, return the index
-            var firstNonRepeatingNumber = keyValuePairs.FirstOrDefault(kvp => kvp.Value.Count == 1);
-            return -1;
+
+            /*
+             *  Updated the return and seach. Using FirstOrDefalut is not a good option.
+             *  With FirstOrDefalut the list will return 0 if it does not exit, but 0 is larger than -1 and therefore is a a valid option.
+             *  with a try catch block using Fist, if it does not exits the catch will return -1 letting the user know it does not exist.
+             */
+            try
+            {
+                return keyValuePairs.First(kvp => kvp.Value.Count == 1).Key;
+            }
+            catch
+            {
+                return -1;
+            }
         }
+
 
         static void Main(string[] args)
         {
             List<int> integers = new List<int>() { };
 
-            // TODO: add test numbers to integers
-            FindFirstNonRepeating(integers);
+            //integers.Add(0);
+            integers.Add(0);
+            integers.Add(1);
+            integers.Add(1);
+            integers.Add(2);
+            integers.Add(2);
+            integers.Add(3);
+            integers.Add(3);
+            integers.Add(4);
+            integers.Add(4);
+
+            int val = FindFirstNonRepeating(integers);
+
+            if (val == -1)
+                Console.WriteLine($"There are no repating numbers in list.");
+            else
+                Console.WriteLine($"{val} is the first repeating number in the list.");
+
+            Console.Read();
         }
     }
 }
