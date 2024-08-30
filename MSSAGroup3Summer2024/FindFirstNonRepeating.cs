@@ -9,6 +9,7 @@ public static class FindFirstNonRepeating
         List<int> testCase3 = new List<int> { 1, 1, 1, 1, 1 };
         List<int> testCase4 = new List<int> { };
         List<int> testCase5 = new List<int> { 1 };
+        List<int> testCase6 = new List<int> { 5, 6, 7, 2, 1, 3, 5, 6, 7 };
 
         if (optimized)
         {
@@ -20,10 +21,11 @@ public static class FindFirstNonRepeating
         }
 
         Console.WriteLine("Test Case 1: " + (Solution(testCase1, optimized) == 0 ? "Passed" : "Failed"));
-        Console.WriteLine("Test Case 2: " + (Solution(testCase2, optimized) == 0 ? "Passed" : "Failed"));
+        Console.WriteLine("Test Case 2: " + (Solution(testCase2, optimized) == 1 ? "Passed" : "Failed"));
         Console.WriteLine("Test Case 3: " + (Solution(testCase3, optimized) == -1 ? "Passed" : "Failed"));
         Console.WriteLine("Test Case 4: " + (Solution(testCase4, optimized) == -1 ? "Passed" : "Failed"));
-        Console.WriteLine("Test Case 5: " + (Solution(testCase5, optimized) == 0 ? "Passed" : "Failed"));
+        Console.WriteLine("Test Case 5: " + (Solution(testCase5, optimized) == 1 ? "Passed" : "Failed"));
+        Console.WriteLine("Test Case 6: " + (Solution(testCase6, optimized) == 2 ? "Passed" : "Failed"));
     }
 
     public static int Solution(List<int> listOfNumbers, bool optimized = false)
