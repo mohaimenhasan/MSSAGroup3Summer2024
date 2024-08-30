@@ -36,14 +36,19 @@ namespace MSSAGroupThree
             //FindFirstNonRepeating.Test_FindFirstNonRepeating(optimized: false);
             //FindFirstNonRepeating.Test_FindFirstNonRepeating(optimized: true);
 
+
             int[] nums = new int[] { 0, 0, 0, 0, 1, 2, 3, 4, 0, 0, 2, 5, 6 };
 
-            FindFirstNonRepeating.MovingZerosMethod(nums);
+            MovingZerosMethod.MoveZero(nums);
+
+            Console.Write($"[{nums[0]}");
 
             foreach (int num in nums)
             {
-                Console.WriteLine(num);
+                Console.Write($", {num}");
             }
+
+            Console.Write("]");
         }
     }
 }

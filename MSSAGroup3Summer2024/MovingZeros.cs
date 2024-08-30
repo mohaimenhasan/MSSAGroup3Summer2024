@@ -1,8 +1,6 @@
-﻿
-
-namespace MSSAGroup3Summer2024
+﻿namespace MSSAGroup3Summer2024
 {
-    public class MovingZerosMethod
+    public static class MovingZerosMethod
     {
         //Given an integer array nums, move all 0s to the end of it while maintaining the relative order of the non-zero elements.
 
@@ -36,23 +34,25 @@ namespace MSSAGroup3Summer2024
          */
 
 
+        public static void MoveZero(int[] nums)
+        {
 
+            int[] tempNums = nums;
+            int counter = 0;
 
-        int[] tempNums = nums;
-        int counter = 0;
-
-            for(int i = 0; i<tempNums.Length; i++)
+            for (int i = 0; i < tempNums.Length; i++)
             {
                 if (tempNums[i] != 0)
                 {
                     nums[counter] = tempNums[i];
                     counter++;
                 }
+            }
 
-
-for (int i = counter; i<nums.Length; i++)
-{
-    nums[counter] = 0;
-}
+            for (int i = counter; i < nums.Length; i++)
+            {
+                nums[counter] = 0;
+            }
+        }
     }
 }
