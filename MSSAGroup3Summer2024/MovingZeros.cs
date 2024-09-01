@@ -54,5 +54,27 @@
                 nums[counter] = 0;
             }
         }
+
+        public static void MoveZeroMoreMikesAttempt(int[] nums)
+        {
+            int lastDigit = nums.Length - 1;
+
+            for (int i = nums.Length - 1; i >= 0; i--)
+            {
+                if (nums[i] == 0)
+                {
+                    while (i < lastDigit)
+                    {
+                        int temp = nums[i + 1];
+                        nums[i + 1] = nums[i];
+                        nums[i] = temp;
+                        i++;
+
+                    }
+
+                    lastDigit--;
+                }
+            }
+        }
     }
 }
