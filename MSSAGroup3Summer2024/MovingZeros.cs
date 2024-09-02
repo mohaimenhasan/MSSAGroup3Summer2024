@@ -2,6 +2,50 @@
 {
     public static class MovingZeros
     {
+        public static void Test_MovingZeros(string name)
+        {
+            int[] arrayOne = new int[] { 0, 0, 0, 0, 1, 2, 3, 4 };
+            int[] arrayOneFinal = new int[] { 1, 2, 3, 4, 0, 0, 0, 0 };
+
+            int[] arrayTwo = new int[] { 1, 2, 3, 4, 0, 0, 0 };
+            int[] arrayTwoFinal = new int[] { 1, 2, 3, 4, 0, 0, 0 };
+
+            int[] arrayThree = new int[0];
+            int[] arrayThreeFinal = new int[0];
+
+            int[] arrayFour = new int[] { 0, 0, 0, 0, 0 };
+            int[] arrayFourFinal = new int[] { 0, 0, 0, 0, 0 };
+
+            int[] arrayFive = new int[] { 1, 2, 3, 4 };
+            int[] arrayFiveFinal = new int[] { 1, 2, 3, 4 };
+
+
+            Solution(name, arrayOne);
+            Solution(name, arrayTwo);
+            Solution(name, arrayThree);
+            Solution(name, arrayFour);
+            Solution(name, arrayFive);
+
+            Console.WriteLine($"XXXXXXXXXXXXXXXXXXXXXXXXXXXX {name} XXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            Console.WriteLine("Test Case 1: " + (arrayOne.SequenceEqual(arrayOneFinal) == true ? "True" : "False"));
+            Console.WriteLine("Test Case 2: " + (arrayTwo.SequenceEqual(arrayTwoFinal) == true ? "True" : "False"));
+            Console.WriteLine("Test Case 3: " + (arrayThree.SequenceEqual(arrayThreeFinal) == true ? "True" : "False"));
+            Console.WriteLine("Test Case 4: " + (arrayFour.SequenceEqual(arrayFourFinal) == true ? "True" : "False"));
+            Console.WriteLine("Test Case 5: " + (arrayFive.SequenceEqual(arrayFiveFinal) == true ? "True" : "False"));
+        }
+
+        public static void Solution(string name, int[] array)
+        {
+            switch (name)
+            {
+                case "MoveZero":
+                    MoveZero(array);
+                    break;
+                case "MoveZeroMikesAttempt":
+                    MoveZeroMikesAttempt(array);
+                    break;
+            }
+        }
         //Given an integer array nums, move all 0s to the end of it while maintaining the relative order of the non-zero elements.
 
         // all ints any real number
@@ -51,11 +95,11 @@
 
             for (int i = counter; i < nums.Length; i++)
             {
-                nums[counter] = 0;
+                nums[i] = 0;
             }
         }
 
-        public static void MoveZeroMoreMikesAttempt(int[] nums)
+        public static void MoveZeroMikesAttempt(int[] nums)
         {
             int lastDigit = nums.Length - 1;
 
