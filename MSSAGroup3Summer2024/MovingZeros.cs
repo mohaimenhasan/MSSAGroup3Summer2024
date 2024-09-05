@@ -101,24 +101,21 @@
 
         public static void MoveZeroMikesAttempt(int[] nums)
         {
-            int lastDigit = nums.Length - 1;
-
-            for (int i = nums.Length - 1; i >= 0; i--)
+            int positionCounter = 0;
+            for (int i = 0; i < nums.Length; i++)
             {
-                if (nums[i] == 0)
+                if (nums[i] != 0)
                 {
-                    while (i < lastDigit)
-                    {
-                        int temp = nums[i + 1];
-                        nums[i + 1] = nums[i];
-                        nums[i] = temp;
-                        i++;
-
-                    }
-
-                    lastDigit--;
+                    nums[positionCounter] = nums[i];
+                    positionCounter++;
                 }
             }
+
+            for (int i = positionCounter; i < nums.Length; i++)
+            {
+                nums[i] = 0;
+            }
+
         }
     }
 }
