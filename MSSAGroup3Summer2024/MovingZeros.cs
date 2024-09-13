@@ -1,4 +1,6 @@
-﻿namespace MSSAGroup3Summer2024
+﻿using System.Globalization;
+
+namespace MSSAGroup3Summer2024
 {
     public static class MovingZeros
     {
@@ -60,9 +62,12 @@
         // [1,2,3,4,0,0,0]
 
 
-        /*
+        /*  [0.9.6,7,0]
+         *  [9,6,7,0,0]
+         *  
+         *  
          *  [0,1,0,3,4]
-         *  [4,3,1,0,0]
+         *  [1,3,4,0,0]
          *  
          *  int j = nums.Length -1
          *  for(int i = 0; i < nums.Length; i++)
@@ -96,6 +101,24 @@
             for (int i = counter; i < nums.Length; i++)
             {
                 nums[i] = 0;
+            }
+        }
+
+
+        public static void MoveZerosMohaimen(int[] num)
+        {
+            int first = 0;
+            int second = 0;
+            while (second < num.Length)
+            {
+                if (num[second] != 0)
+                {
+                    int temp = num[first];
+                    num[first] = num[second];
+                    num[second] = temp;
+                    first++;
+                }
+                second++;
             }
         }
 
