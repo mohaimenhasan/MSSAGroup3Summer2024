@@ -36,8 +36,11 @@ namespace MSSAGroupThree
             //FindFirstNonRepeating.Test_FindFirstNonRepeating(optimized: false);
             //FindFirstNonRepeating.Test_FindFirstNonRepeating(optimized: true);
 
-            MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZero));
-            MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZeroMikesAttempt));
+            // MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZero));
+            // MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZeroMikesAttempt));
+
+            IsPalindromeNumber.Test_IsPalindrome();
+
         }
     }
 }
