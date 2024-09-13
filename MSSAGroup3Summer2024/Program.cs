@@ -38,6 +38,7 @@ namespace MSSAGroupThree
 
             MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZero));
             MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZeroMikesAttempt));
+            MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZerosMohaimen));
 
             // IsPalindromeNumber.Test_IsPalindrome();
         }
