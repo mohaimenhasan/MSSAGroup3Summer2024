@@ -33,14 +33,14 @@ namespace MSSAGroupThree
     {
         static void Main(string[] args)
         {
-            //FindFirstNonRepeating.Test_FindFirstNonRepeating(optimized: false);
-            //FindFirstNonRepeating.Test_FindFirstNonRepeating(optimized: true);
+            // Sorting, Counting, and returning duplicates of a string array
+            var stringArray = new string[] { "ccdd", "aa", "efgh", "aaba", "bca", "aba", "abc", "aa", "aaba" };
 
-            MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZero));
-            MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZeroMikesAttempt));
-            MovingZeros.Test_MovingZeros(nameof(MovingZeros.MoveZerosMohaimen));
+            foreach (var letters in stringArray)
+            {
+                Console.WriteLine(letters);
+            }
 
-            // IsPalindromeNumber.Test_IsPalindrome();
         }
     }
 }
