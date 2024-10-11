@@ -6,31 +6,24 @@ namespace MSSAGroupThree
     {
         static void Main(string[] args)
         {
-            // Sorting, Counting, and returning duplicates of a string array
-            var stringArray = new string[] { "ccdd", "aa", "efgh", "aaba", "bca", "aba", "abc", "aa", "aaba" };
+            // Stack, Queue, and LinkedList implementation
+            var fruitArray = new string[] { "apple", "banana", "cherry", "date", "elderberry" };
+            int n = 2; // Remove first 2 elements
+            int k = 2; // Return the 2nd element from the remaining
 
-            foreach (var letters in stringArray)
+            foreach (var fruits in fruitArray)
             {
-                Console.WriteLine(letters);
+                Console.WriteLine(fruits);
             }
 
-            var sortedStrings = stringArray.SortString();
+            var reversedFruitStack = fruitArray.ReverseUsingStack();
+            Console.WriteLine("Reversed Array: " + string.Join(", ", reversedFruitStack));
 
-            foreach (var sort in sortedStrings)
-            {
-                Console.WriteLine($"sorted array {sort}");
-            }
+            var remainingFruits = fruitArray.RemoveUsingQueue(n);
+            Console.WriteLine("Remaining Array after removing first " + n + " elements: " + string.Join(", ", remainingFruits));
 
-            var duplicateCount = stringArray.GetDuplicateCount();
-
-            Console.WriteLine($"count of duplicates = {duplicateCount}");
-
-            var stringDuplicates = stringArray.ReturnDuplicates();
-
-            foreach (var duplicate in stringDuplicates)
-            {
-                Console.WriteLine($"duplicate strings {duplicate}");
-            }
+            var kthElement = fruitArray.GetKthElementUsingLinkedList(k);
+            Console.WriteLine("The " + k + "-th element in the remaining array is: " + kthElement);
         }
     }
 }
