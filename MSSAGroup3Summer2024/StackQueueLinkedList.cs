@@ -27,7 +27,7 @@ namespace MSSAGroup3Summer2024
         //Michael
         // Use a linked list to store the remaining elements and return the 2nd element (k)
         // Output: "date"
-        public static string[] GetKthElementUsingLinkedList(this string[] fruitArray, int k)
+        public static string GetKthElementUsingLinkedList(this string[] fruitArray, int k)
         {
             throw new NotImplementedException();
         }
